@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_background"
+    tools:context=".quizpage">
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quiz_background"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/back_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:background="@drawable/back_button"
+            android:layout_weight="0"
+            android:paddingLeft="10dp"
+            android:paddingTop="1dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="1dp"
+            android:text="Back"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/quiz_icon_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_layout"
+            android:layout_margin="9dp"
+            android:background="@drawable/quiz_page_color_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Portrait"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/icon_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/portrait" />
+
+            <Button
+                android:id="@+id/portrait_save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adult_layout"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:background="@drawable/button_background"
+                android:paddingLeft="10dp"
+                android:paddingTop="1dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="1dp"
+                android:text="Choose another portrait!"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Nick name"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/nickname_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="36dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="@drawable/edit_text_comprehension"
+                android:hint="  Enter a nick name"
+                android:padding="5dip"
+                android:singleLine="true"
+                android:textColorHint="#AAAAAA"
+                android:textSize="15dip" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Gender"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="#000000" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Age"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="#000000" />
+
+            <org.angmarch.views.NiceSpinner
+                android:id="@+id/nice_spinner1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Favourite topic"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="#000000" />
+
+            <org.angmarch.views.NiceSpinner
+                android:id="@+id/nice_spinner2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:layout_marginBottom="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/save_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scroll_view"
+            android:layout_margin="9dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/quiz_save_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:paddingLeft="10dp"
+                android:paddingTop="1dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="1dp"
+                android:text="Save as your character!"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

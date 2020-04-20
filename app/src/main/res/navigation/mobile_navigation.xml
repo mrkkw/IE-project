@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_favourite">
+
+    <fragment
+        android:id="@+id/navigation_me"
+        android:name="com.example.newgame.ui.Me.Me"
+        android:label="Personal information"
+        tools:layout="@layout/me_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.example.newgame.ui.Map.Map"
+        android:label="Map"
+        tools:layout="@layout/map_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.newgame.ui.Favourite.Favourite"
+        android:label="Favourite"
+        tools:layout="@layout/favourite_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_KB"
+        android:name="com.example.newgame.ui.KnowledgeBase.KnowledgeBase"
+        android:label="Knowledge Base"
+        tools:layout="@layout/knowledge_base_fragment"/>
+
+</navigation>
