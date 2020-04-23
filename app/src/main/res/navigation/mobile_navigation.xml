@@ -4,7 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_favourite">
+    app:startDestination="@+id/navigation_KB">
+
+    <fragment
+        android:id="@+id/navigation_KB"
+        android:name="com.example.newgame.ui.KnowledgeBase.KnowledgeBase"
+        android:label="Knowledge Base"
+        tools:layout="@layout/knowledge_base_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.newgame.ui.Favourite.Favourite"
+        android:label="Favourite"
+        tools:layout="@layout/favourite_fragment"/>
 
     <fragment
         android:id="@+id/navigation_me"
@@ -18,16 +30,6 @@
         android:label="Map"
         tools:layout="@layout/map_fragment"/>
 
-    <fragment
-        android:id="@+id/navigation_favourite"
-        android:name="com.example.newgame.ui.Favourite.Favourite"
-        android:label="Favourite"
-        tools:layout="@layout/favourite_fragment"/>
 
-    <fragment
-        android:id="@+id/navigation_KB"
-        android:name="com.example.newgame.ui.KnowledgeBase.KnowledgeBase"
-        android:label="Knowledge Base"
-        tools:layout="@layout/knowledge_base_fragment"/>
 
 </navigation>

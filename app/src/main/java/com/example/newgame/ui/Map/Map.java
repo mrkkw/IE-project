@@ -25,6 +25,7 @@ public class Map extends Fragment {
         mapViewModel =
                 ViewModelProviders.of(this).get(MapViewModel.class);
         View root = inflater.inflate(R.layout.map_fragment, container, false);
+
         final TextView textView = root.findViewById(R.id.text_map);
         mapViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

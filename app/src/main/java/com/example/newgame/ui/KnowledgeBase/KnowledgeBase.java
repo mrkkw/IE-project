@@ -26,13 +26,8 @@ public class KnowledgeBase extends Fragment {
         knowledgeBaseViewModel =
                 ViewModelProviders.of(this).get(KnowledgeBaseViewModel.class);
         View root = inflater.inflate(R.layout.knowledge_base_fragment, container, false);
-        final TextView textView = root.findViewById(R.id.text_KB);
-        knowledgeBaseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+
         return root;
     }
 

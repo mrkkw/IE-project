@@ -3,10 +3,12 @@ package com.example.newgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -18,7 +20,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class quizpage extends AppCompatActivity {
-    String nickname;
     String age;
     String gender;
     String topic;
@@ -30,7 +31,7 @@ public class quizpage extends AppCompatActivity {
 
         bakcbtn();
 
-        nickname();
+        changePortrait();
 
         genderRadioBtn();
 
@@ -54,10 +55,24 @@ public class quizpage extends AppCompatActivity {
         });
     }
 
-    private void nickname(){
+    private void changePortrait(){
+        Button btn_portrait = (Button)findViewById(R.id.portrait_save_button);
+
+        btn_portrait.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getImageFromAlbum();
+            }
+        });
+    }
+
+    private String nickname(){
+        String nickname;
         //edit text
-        final EditText editText = (EditText)findViewById(R.id.nickname_edit);
+        EditText editText = (EditText)findViewById(R.id.nickname_edit);
         nickname = editText.getText().toString();
+
+        return nickname;
     }
 
     private void ageSpinner(){
@@ -70,7 +85,11 @@ public class quizpage extends AppCompatActivity {
         niceSpinner1.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
             @Override
             public void onItemSelected(NiceSpinner parent, View view, int position, long id) {
-                age = niceSpinner1.getSelectedItem().toString();
+                if(age==null){
+                    age = "Under 12";
+                }else{
+                    age = niceSpinner1.getSelectedItem().toString();
+                }
             }
         });
     }
@@ -85,9 +104,15 @@ public class quizpage extends AppCompatActivity {
         niceSpinner2.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
             @Override
             public void onItemSelected(NiceSpinner parent, View view, int position, long id) {
-                topic = niceSpinner2.getSelectedItem().toString();
+                if(topic == null){
+                    topic = "Animal";
+                }else{
+                    topic = niceSpinner2.getSelectedItem().toString();
+                }
             }
         });
+
+
     }
 
     private void genderRadioBtn(){
@@ -120,16 +145,53 @@ public class quizpage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //stored object for future use
-                //User user = new User(nickname,age,gender,topic);
-
-                //show toast
-                String message = "Your character is: "+ nickname + "(" + gender + ")" + ", age: " + age + ", topic: " + topic;
+                //custom toast
                 custom_toast ct = new custom_toast();
-                ct.showToast(getApplicationContext(),message);
+
+                String message;
+
+                //stored user name
+                String nickname = nickname();
+
+                //validation
+                if(nickname.isEmpty()){
+                    ct.showToast(getApplicationContext(),"Nick name should not be empty(Default: mrkkw)");
+                    EditText editText = (EditText) findViewById(R.id.nickname_edit);
+                    editText.setText("mrkkw");
+                }else{
+                    message = "Your character is: "+ nickname + "(" + gender + ")" + ", age: " + age + ", topic: " + topic;
+                    //show toast
+                    ct.showToast(getApplicationContext(),message);
+                }
+
             }
         });
     }
 
+    protected void getImageFromAlbum() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,101);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        custom_toast ct  = new custom_toast();
+
+        if (requestCode == 101) {
+            Uri uri = data.getData();
+
+            ImageView imageView = (ImageView)findViewById(R.id.icon_image);
+            imageView.setImageURI(uri);
+
+            ct.showToast(getApplicationContext(),"Portrait set succeed!");
+        } else{
+
+            ct.showToast(getApplicationContext(),"Access image failed!");
+        }
+    }
 
 }

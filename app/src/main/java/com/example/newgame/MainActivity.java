@@ -6,10 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.newgame.ui.Favourite.Favourite;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +31,29 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(MainActivity.this,modepage.class);
-                startActivity(intent1);
+                Intent intent = new Intent(MainActivity.this,modepage.class);
+                startActivity(intent);
+                //CoursesAsyncTask getAllCourses = new CoursesAsyncTask();
+               //getAllCourses.execute();
             }
         });
     }
+
+    private class CoursesAsyncTask extends AsyncTask<Void, Void, String>
+    {
+        @Override
+        protected String doInBackground (Void...params){
+
+            return callingAWSWS.testAWS();
+        }
+        @Override
+        protected void onPostExecute (String courses){
+            TextView textView = (TextView)findViewById(R.id.testWS);
+            textView.setText(courses);
+        }
+    }
+
+
 
     /*
      public void showDialog(View view){
