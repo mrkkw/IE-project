@@ -24,12 +24,5 @@
         android:label="Personal information"
         tools:layout="@layout/me_fragment"/>
 
-    <fragment
-        android:id="@+id/navigation_map"
-        android:name="com.example.newgame.ui.Map.Map"
-        android:label="Map"
-        tools:layout="@layout/map_fragment"/>
-
-
 
 </navigation>

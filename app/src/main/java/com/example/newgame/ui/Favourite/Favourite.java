@@ -24,7 +24,6 @@ import com.example.newgame.R;
 import com.example.newgame.callingAWSWS;
 import com.example.newgame.gamepage;
 import com.example.newgame.item_space_recyclerview;
-import com.example.newgame.ui.Map.MapViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,7 @@ public class Favourite extends Fragment {
 
         recyclerView = root.findViewById(R.id.favourite_item_list);
 
-        initData();
+        initData(5);
 
         recycleAdapter= new Favourite_item_RecyclerAdapter(getContext(), mDatas);
 
@@ -67,11 +66,16 @@ public class Favourite extends Fragment {
         return root;
     }
 
-    private void initData() {
+    private void initData(int index) {
         mDatas = new ArrayList<String>();
-        for ( int i=0; i < 10; i++) {
-            mDatas.add( "Customs Pass "+i);
+        if (index > 0) {
+            for ( int i=0; i < index; i++) {
+                mDatas.add( "Favourite item "+i);
+            }
+        }else{
+            mDatas.add( "Favourite item "+1);
         }
+
     }
 
 }

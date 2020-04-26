@@ -42,9 +42,6 @@ public class modepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modepage);
 
-        //remind dialog
-        showDialog();
-
         //back button function
         Menubtn();
 
@@ -54,7 +51,7 @@ public class modepage extends AppCompatActivity {
         //adult button function
         adult();
 
-        //customise button
+        //custom button
         customiseBTN();
     }
 
@@ -70,7 +67,6 @@ public class modepage extends AppCompatActivity {
         });
     }
 
-
     private void child(){
         Button btn_child = (Button)findViewById(R.id.children_mode_button);
 
@@ -83,15 +79,6 @@ public class modepage extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1){
-            if(resultCode == RESULT_OK){
-                signal = 1;
-            }
-        }
-    }
 
     private void adult(){
         Button btn_adult = (Button)findViewById(R.id.adult_mode_button);
@@ -111,62 +98,20 @@ public class modepage extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                Intent intent3 = new Intent(modepage.this,quizpage.class);
+                startActivityForResult(intent3,1);
             }
         });
     }
 
-    public void showDialog(){
-
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Welocme! New eagle!");
-        builder1.setCancelable(true);
-
-        builder1.setTitle("Navigation Guideline!");
-        builder1.setIcon(R.drawable.alert_icon);
-
-        //set the view for the dialog
-        View v = LayoutInflater.from(this).inflate(R.layout.activity_custome_dialog,null);
-
-        //initialise the three buttons
-        Button btn_customise = (Button) v.findViewById(R.id.customise_quiz_button);
-        Button btn_menu = (Button) v.findViewById(R.id.menu_button);
-        Button btn_cancel = (Button) v.findViewById(R.id.cancel_button);
-
-        //to the quiz page
-        btn_customise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(modepage.this,quizpage.class);
-                startActivity(intent);
+    //get message
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1){
+            if(resultCode == RESULT_OK){
+                signal = 1;
             }
-        });
-
-        //to the menu page
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(modepage.this,Navigation_page.class);
-                startActivity(intent);
-            }
-        });
-
-        //insert the quiz page into dialog
-        builder1.setView(v);
-
-        //building complete
-        AlertDialog alert11 = builder1.create();
-
-        //quit the dialog
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert11.dismiss();
-            }
-        });
-
-        //show the dialog
-        alert11.show();
+        }
     }
-
 }

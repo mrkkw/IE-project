@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,modepage.class);
+
+                Intent intent = new Intent(MainActivity.this,quizpage.class);
                 startActivity(intent);
                 //CoursesAsyncTask getAllCourses = new CoursesAsyncTask();
                //getAllCourses.execute();

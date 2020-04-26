@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_page_color_background"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+    tools:context=".Introduction_page">
+
+        <ImageView
+            android:id="@+id/grouplogo"
+            android:layout_width="157dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/teamlogo1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="9dp"
+            android:background="@drawable/linear_layout_background_shape"
+            android:elevation="6dp"
+            android:layout_margin="9dp">
+
+            <TextView
+                 android:id="@+id/Introduction_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:clickable="true"
+                android:bufferType="normal"
+                android:gravity="center"
+                android:justificationMode="inter_word"
+                android:shadowColor="#f6aa3e"
+                android:shadowRadius="0.5"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/welcome_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="18dp"
+            android:background="@drawable/button_background"
+            android:paddingLeft="25dp"
+            android:paddingTop="8dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="8dp"
+            android:alpha="0.9"
+            android:text="Start!"
+            android:textColor="#ffffff"
+            android:shadowColor="#f6aa3e"
+            android:shadowRadius="2.75"
+            android:textSize="18sp" />
+
+
+</LinearLayout>

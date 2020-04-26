@@ -30,6 +30,9 @@ public class Navigation_page extends AppCompatActivity {
         //configuration
         configure();
 
+        //float menu
+        float_menu();
+
         //float button phone
         floatBtn_phone();
 
@@ -46,11 +49,16 @@ public class Navigation_page extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_me, R.id.navigation_map, R.id.navigation_favourite, R.id.navigation_KB)
+                R.id.navigation_me, R.id.navigation_favourite, R.id.navigation_KB)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    private void float_menu(){
+        FloatingActionMenu float_menu = (FloatingActionMenu)findViewById(R.id.float_menu);
+        float_menu.bringToFront();
     }
 
     //phone button

@@ -2,6 +2,7 @@
     <string name="app_name">New game</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="unisex">other</string>
     <string name="title_activity_test">test</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

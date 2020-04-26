@@ -15,21 +15,6 @@
         android:background="@drawable/quiz_background"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/back_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:background="@drawable/back_button"
-            android:layout_weight="0"
-            android:paddingLeft="10dp"
-            android:paddingTop="1dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="1dp"
-            android:text="Back"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
-
         <LinearLayout
             android:id="@+id/quiz_icon_layout"
             android:layout_width="match_parent"
@@ -149,6 +134,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/female" />
+
+                <RadioButton
+                    android:id="@+id/radio_unisex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unisex" />
             </RadioGroup>
 
             <TextView
@@ -206,7 +197,37 @@
                 android:layout_marginLeft="36dip"
                 android:layout_marginTop="18dip"
                 android:layout_marginRight="36dip"
-                android:layout_marginBottom="18dp" />
+                />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:text="Living area"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:background="#000000" />
+
+            <org.angmarch.views.NiceSpinner
+                android:id="@+id/nice_spinner3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dip"
+                android:layout_marginTop="18dip"
+                android:layout_marginRight="36dip"
+                android:layout_marginBottom="18dp"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -226,7 +247,7 @@
                 android:paddingTop="1dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="1dp"
-                android:text="Save as your character!"
+                android:text="Save and start your trip!"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
         </LinearLayout>

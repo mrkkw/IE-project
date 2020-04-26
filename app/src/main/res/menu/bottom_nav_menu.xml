@@ -12,11 +12,6 @@
         android:title="Favourite" />
 
     <item
-        android:id="@+id/navigation_map"
-        android:icon="@drawable/map"
-        android:title="Map" />
-
-    <item
         android:id="@+id/navigation_me"
         android:icon="@drawable/me"
         android:title="Me" />
