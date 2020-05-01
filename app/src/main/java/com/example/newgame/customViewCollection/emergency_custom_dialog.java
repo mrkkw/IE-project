@@ -1,8 +1,10 @@
-package com.example.newgame;
+package com.example.newgame.customViewCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.newgame.R;
 
 public class emergency_custom_dialog extends AppCompatActivity {
 

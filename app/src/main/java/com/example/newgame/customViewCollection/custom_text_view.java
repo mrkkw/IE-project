@@ -1,4 +1,4 @@
-package com.example.newgame;
+package com.example.newgame.customViewCollection;
 
 import android.nfc.Tag;
 import android.widget.TextView;

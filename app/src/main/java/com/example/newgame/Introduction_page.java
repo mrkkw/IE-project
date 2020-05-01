@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.newgame.customViewCollection.custom_text_view;
+import com.example.newgame.customViewCollection.custom_toast;
+
 public class Introduction_page extends AppCompatActivity {
     private custom_text_view custom_text;
 
@@ -27,21 +30,19 @@ public class Introduction_page extends AppCompatActivity {
 
     private void introduction(){
 
-
-
         TextView textView = (TextView)findViewById(R.id.Introduction_text);
 
         String custom_text_text = "Introduction of YEV application\n\nHi new eagle!\nWe are glad to see you here and when you finish reading this introduction then you can test your knowledge and enjoy a pleasant trip in our game.\n\n" +
                 "For eagles at different age group, we will navigate you to the different section of game.\n\n However if you want to explore the topics firstly, click on the menu button and you will find the knowledge base there.\n\n" +
-                "Then at that position you can add the topics which your are interested in into my favourite topics.\n\nWhen you want to start the game, click on the game menu button and your trip will satrt!";
+                "Then at that position you can add the topics which your are interested in into my favourite topics.\n\nWhen you want to start the game, click on the game menu button and your trip will start!";
 
         //click for speeding up
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(threshold == 0){
-                    custom_text.setTime(50);
-                    threshold = 1;
+                if(threshold < 100){
+                    threshold = 100;
+                    custom_text.setTime(threshold);
                 }else{
                     custom_toast ct = new custom_toast();
                     ct.showToast(getApplicationContext(),"maximum");
@@ -92,7 +93,7 @@ public class Introduction_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alert11.dismiss();
-                Intent  intent = new Intent(Introduction_page.this,gamepage.class);
+                Intent  intent = new Intent(Introduction_page.this,quizpage.class);
                 startActivity(intent);
             }
         });

@@ -1,20 +1,18 @@
 package com.example.newgame;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.newgame.customViewCollection.emergency_information;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.github.clans.fab.*;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -80,7 +78,7 @@ public class Navigation_page extends AppCompatActivity {
         phone_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Navigation_page.this,emergency_information.class);
+                Intent intent = new Intent(Navigation_page.this, emergency_information.class);
                 startActivity(intent);
 
             }

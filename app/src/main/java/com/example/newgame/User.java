@@ -6,12 +6,14 @@ public class User {
     String age;
     String gender;
     String topic;
+    String region;
 
-    public User(String nickname,String age, String gender,String topic){
+    public User(String nickname,String age, String gender,String topic,String region){
         this.nickname = nickname;
         this.age = age;
         this.gender = gender;
         this.topic = topic;
+        this.region = region;
     }
 
     //setter
@@ -31,6 +33,10 @@ public class User {
         this.topic = topic;
     }
 
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     //getter
 
     public String getNickname() {
@@ -47,5 +53,9 @@ public class User {
 
     public String getTopic() {
         return topic;
+    }
+
+    public String getRegion() {
+        return region;
     }
 }

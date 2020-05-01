@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz_page_color_background"
-    tools:context=".gamepage">
+    android:orientation="vertical"
+    tools:context=".knowledge_base_machinepage">
 
     <LinearLayout
         android:id="@+id/button_layout"
@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/back_button"
+            android:id="@+id/knowledge_base_machinepage_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -28,43 +28,13 @@
             android:text="back"
             android:textColor="#ffffff"
             android:textSize="15sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="5dp"
-            android:gravity="right">
-
-            <Button
-                android:id="@+id/menu_button_gamepage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="5dp"
-                android:background="@drawable/back_button"
-                android:paddingLeft="10dp"
-                android:paddingTop="1dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="1dp"
-                android:text="Menu"
-                android:textColor="#ffffff"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/game_list"
-        android:layout_below="@+id/button_layout"
+        android:id="@+id/knowledge_base_machinepage_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="9dp"
         android:background="@drawable/linear_layout_background_shape"
         />
-    
-
-
-
-</RelativeLayout>
+</LinearLayout>

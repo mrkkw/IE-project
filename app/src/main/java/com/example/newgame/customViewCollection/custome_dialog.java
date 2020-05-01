@@ -1,9 +1,11 @@
-package com.example.newgame;
+package com.example.newgame.customViewCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.newgame.R;
 
 public class custome_dialog extends AppCompatActivity {
 

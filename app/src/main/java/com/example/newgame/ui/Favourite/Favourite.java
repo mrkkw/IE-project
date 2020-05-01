@@ -1,13 +1,10 @@
 package com.example.newgame.ui.Favourite;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,13 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.newgame.Favourite_item_RecyclerAdapter;
-import com.example.newgame.MyRecyclerAdapter;
+import com.example.newgame.AdapterCollection.Favourite_item_RecyclerAdapter;
 import com.example.newgame.R;
-import com.example.newgame.callingAWSWS;
-import com.example.newgame.gamepage;
 import com.example.newgame.item_space_recyclerview;
 
 import java.util.ArrayList;
@@ -51,7 +44,6 @@ public class Favourite extends Fragment {
         initData(5);
 
         recycleAdapter= new Favourite_item_RecyclerAdapter(getContext(), mDatas);
-
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

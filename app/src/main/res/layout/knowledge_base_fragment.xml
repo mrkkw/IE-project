@@ -22,6 +22,7 @@
             android:layout_margin="9dp"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
+            android:scaleType="fitXY"
             android:elevation="6dp"
             android:background="@drawable/linear_layout_background_shape"
         />
@@ -33,17 +34,7 @@
             android:layout_margin="9dp"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
-            android:elevation="6dp"
-            android:background="@drawable/linear_layout_background_shape"
-            />
-
-        <ImageView
-            android:id="@+id/KB_Animal"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="9dp"
-            android:clickable="true"
-            android:src="@drawable/kb_click_background"
+            android:scaleType="fitXY"
             android:elevation="6dp"
             android:background="@drawable/linear_layout_background_shape"
             />
@@ -55,28 +46,7 @@
             android:layout_margin="9dp"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
-            android:elevation="6dp"
-            android:background="@drawable/linear_layout_background_shape"
-            />
-
-        <ImageView
-            android:id="@+id/KB_Assault_Injuries"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="9dp"
-            android:clickable="true"
-            android:src="@drawable/kb_click_background"
-            android:elevation="6dp"
-            android:background="@drawable/linear_layout_background_shape"
-            />
-
-        <ImageView
-            android:id="@+id/KB_Poisoning"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="9dp"
-            android:clickable="true"
-            android:src="@drawable/kb_click_background"
+            android:scaleType="fitXY"
             android:elevation="6dp"
             android:background="@drawable/linear_layout_background_shape"
             />
@@ -88,10 +58,10 @@
             android:layout_margin="9dp"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
+            android:scaleType="fitXY"
             android:elevation="6dp"
             android:background="@drawable/linear_layout_background_shape"
             />
-
     </LinearLayout>
 
 </ScrollView>

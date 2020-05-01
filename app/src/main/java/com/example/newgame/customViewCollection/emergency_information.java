@@ -1,4 +1,4 @@
-package com.example.newgame;
+package com.example.newgame.customViewCollection;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.newgame.AdapterCollection.emergency_adapter;
+import com.example.newgame.Navigation_page;
+import com.example.newgame.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +62,7 @@ public class emergency_information extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(emergency_information.this,Navigation_page.class);
+                Intent intent1 = new Intent(emergency_information.this, Navigation_page.class);
                 startActivity(intent1);
             }
         });

@@ -10,4 +10,7 @@
     <color name="qingse">#99ffcc</color>
     <color name="danhuangse">#ccffcc</color>
     <color name="yueyabai">#ffffcc</color>
+
+    <color name="hongse">#FF0000</color>
+    <color name="black">#000000</color>
 </resources>

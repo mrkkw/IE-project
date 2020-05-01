@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,quizpage.class);
+                Intent intent = new Intent(MainActivity.this,Introduction_page.class);
                 startActivity(intent);
                 //CoursesAsyncTask getAllCourses = new CoursesAsyncTask();
                //getAllCourses.execute();

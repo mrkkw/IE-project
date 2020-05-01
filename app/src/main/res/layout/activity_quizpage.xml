@@ -94,6 +94,25 @@
                 android:textColorHint="#AAAAAA"
                 android:textSize="15dip" />
 
+            <Button
+                android:id="@+id/check_duplicate_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adult_layout"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_marginRight="36dp"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/button_background"
+                android:paddingLeft="10dp"
+                android:paddingTop="1dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="1dp"
+                android:text="Check duplication!"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
             <TextView
                 android:id="@+id/text2"
                 android:layout_width="fill_parent"

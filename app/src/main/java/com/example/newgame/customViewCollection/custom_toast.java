@@ -1,4 +1,4 @@
-package com.example.newgame;
+package com.example.newgame.customViewCollection;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -9,6 +9,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.newgame.R;
 
 public class custom_toast {
     private static TextView mTextView;

@@ -1,4 +1,4 @@
-package com.example.newgame;
+package com.example.newgame.AdapterCollection;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.newgame.R;
 
 import java.util.List;
 

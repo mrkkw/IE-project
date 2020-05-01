@@ -1,37 +1,33 @@
-package com.example.newgame;
+package com.example.newgame.AdapterCollection;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+import com.example.newgame.R;
 
 import java.util.List;
 
-public class Favourite_item_RecyclerAdapter extends RecyclerView.Adapter<Favourite_item_RecyclerAdapter.FavViewHolder> {
+public class knowledge_base_machinepageAdapter extends RecyclerView.Adapter<knowledge_base_machinepageAdapter.MyViewHolder> {
 
     private List<String> mDatas;
     private Context mContext;
     private LayoutInflater inflater;
 
-    public Favourite_item_RecyclerAdapter(Context context, List<String> datas) {
+    public knowledge_base_machinepageAdapter(Context context, List<String> datas) {
         this.mContext = context;
         this.mDatas = datas;
         inflater = LayoutInflater.from(mContext);
-
     }
 
     @Override
-    public void onBindViewHolder(Favourite_item_RecyclerAdapter.FavViewHolder holder, final int position) {
-        holder.textView.setText(mDatas.get(position));
+    public void onBindViewHolder(knowledge_base_machinepageAdapter.MyViewHolder holder, final int position) {
 
         holder.btn.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -53,22 +49,23 @@ public class Favourite_item_RecyclerAdapter extends RecyclerView.Adapter<Favouri
     }
 
     @Override
-    public Favourite_item_RecyclerAdapter.FavViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.favourite_item,parent, false);
-        Favourite_item_RecyclerAdapter.FavViewHolder holder= new Favourite_item_RecyclerAdapter.FavViewHolder(view);
-
+    public knowledge_base_machinepageAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.knowledgebase_item_list_frame,parent, false);
+        knowledge_base_machinepageAdapter.MyViewHolder holder= new knowledge_base_machinepageAdapter.MyViewHolder(view);
         return holder;
     }
 
-    class FavViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
         Button btn;
-        public FavViewHolder(View view) {
+
+        public MyViewHolder(View view) {
             super(view);
-            textView = view.findViewById(R.id.fav_item_text);
-            btn = view.findViewById(R.id.delete_button);
+            textView=(TextView) view.findViewById(R.id.KB_item_text);
+            btn = (Button) view.findViewById(R.id.KB_fav_button);
         }
 
     }
 }
+

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_background"
+    android:orientation="vertical"
+    tools:context=".quiz_5">
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/quiz_background"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/back_button_quiz5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:background="@drawable/back_button"
+            android:paddingLeft="10dp"
+            android:paddingTop="1dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="1dp"
+            android:text="Back"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quiz_choice_layout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_margin="9dp"
+        android:background="@drawable/quiz_page_color_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/linear_layout_background_shape"
+            android:elevation="6dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="36dp"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <TextView
+                android:id="@+id/quiz5_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:bufferType="normal"
+                android:clickable="true"
+                android:gravity="center"
+                android:justificationMode="inter_word"
+                android:shadowColor="#f6aa3e"
+                android:shadowRadius="0.5"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="18dip"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="1dp"
+            android:background="#000000" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_quiz5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="18dip"
+            android:layout_marginRight="9dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_quiz5_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reflective duct tape" />
+
+            <RadioButton
+                android:id="@+id/radio_quiz5_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fountain pen" />
+
+            <RadioButton
+                android:id="@+id/radio_quiz5_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunglasses" />
+
+            <RadioButton
+                android:id="@+id/radio_quiz5_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A dark-colored cap" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quiz_yesOrno_goHead_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/quiz5_button_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="10dp"
+            android:paddingTop="1dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="1dp"
+            android:text="Next!"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

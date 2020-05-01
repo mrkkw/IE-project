@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Game_menu_dialog extends AppCompatActivity {
+public class yesOrno_game extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_menu_dialog);
+        setContentView(R.layout.activity_yes_orno_game);
     }
 }
