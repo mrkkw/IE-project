@@ -36,7 +36,7 @@ public class Me extends Fragment {
                 ViewModelProviders.of(this).get(MeViewModel.class);
         View root = inflater.inflate(R.layout.me_fragment, container, false);
 
-        SharedPreferences sp = sp = this.getActivity().getSharedPreferences("sp_name", Context.MODE_PRIVATE);
+        SharedPreferences sp = this.getActivity().getSharedPreferences("sp_name", Context.MODE_PRIVATE);
 
         //image
         String str_uri = sp.getString("uri","mrkkw");

@@ -290,6 +290,7 @@ public class quizpage extends AppCompatActivity {
 
             editor.putString("uri",str);
 
+            editor.commit();
             //set show
             ct.showToast(getApplicationContext(),"Portrait set succeed!");
         } else{

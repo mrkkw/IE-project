@@ -29,7 +29,7 @@ public class knowledge_base_heatinjurypage extends AppCompatActivity {
 
         setRecyclerView();
 
-        backbuttion();
+        backbutton();
     }
 
     private void initData() {
@@ -58,8 +58,8 @@ public class knowledge_base_heatinjurypage extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
     }
 
-    private void backbuttion(){
-        Button button = (Button)findViewById(R.id.knowledge_base_heatinjurypage_list);
+    private void backbutton(){
+        Button button = (Button)findViewById(R.id.knowledge_base_heatinjurypage_back_button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

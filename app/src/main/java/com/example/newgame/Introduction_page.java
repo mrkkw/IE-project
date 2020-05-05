@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,8 +17,11 @@ import com.example.newgame.customViewCollection.custom_text_view;
 import com.example.newgame.customViewCollection.custom_toast;
 
 public class Introduction_page extends AppCompatActivity {
-    private custom_text_view custom_text;
 
+    private custom_text_view custom_text;
+    String custom_text_text = "Introduction of YEV application\n\nHi new eagle!\nWe are glad to see you here and when you finish reading this introduction then you can test your knowledge and enjoy a pleasant trip in our game.\n\n" +
+            "For eagles at different age group, we will navigate you to the different section of game.\n\n However if you want to explore the topics firstly, click on the menu button and you will find the knowledge base there.\n\n" +
+            "Then at that position you can add the topics which your are interested in into my favourite topics.\n\nWhen you want to start the game, click on the game menu button and your trip will start!";
     int threshold = 0;
 
     @Override
@@ -24,17 +30,11 @@ public class Introduction_page extends AppCompatActivity {
         setContentView(R.layout.activity_introduction_page);
 
         introduction();
-
-        game_menu_btn();
     }
 
     private void introduction(){
 
         TextView textView = (TextView)findViewById(R.id.Introduction_text);
-
-        String custom_text_text = "Introduction of YEV application\n\nHi new eagle!\nWe are glad to see you here and when you finish reading this introduction then you can test your knowledge and enjoy a pleasant trip in our game.\n\n" +
-                "For eagles at different age group, we will navigate you to the different section of game.\n\n However if you want to explore the topics firstly, click on the menu button and you will find the knowledge base there.\n\n" +
-                "Then at that position you can add the topics which your are interested in into my favourite topics.\n\nWhen you want to start the game, click on the game menu button and your trip will start!";
 
         //click for speeding up
         textView.setOnClickListener(new View.OnClickListener() {
@@ -51,20 +51,40 @@ public class Introduction_page extends AppCompatActivity {
             }
         });
 
-        custom_text = new custom_text_view(textView, custom_text_text, 100);
+        textView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                game_menu_btn(count);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        custom_text = new custom_text_view(textView, custom_text_text, 100);
     }
 
 
-    private void game_menu_btn(){
+    private void game_menu_btn(int xx){
         Button button = (Button)findViewById(R.id.welcome_button);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
+        if(xx!=custom_text_text.length()){
+            button.setVisibility(View.INVISIBLE);
+        }else{
+            button.setVisibility(View.VISIBLE);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showDialog();
+                }
+            });
+        }
     }
 
     //dialog

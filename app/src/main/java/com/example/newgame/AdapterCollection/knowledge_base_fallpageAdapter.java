@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newgame.R;
+import com.example.newgame.customViewCollection.custom_toast;
 import com.example.newgame.quiz_1;
 import com.example.newgame.quiz_2;
 import com.example.newgame.quiz_3;
@@ -48,12 +49,26 @@ public class knowledge_base_fallpageAdapter extends RecyclerView.Adapter<knowled
                 return false;
             }
         });
+
+        holder.textView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    holder.textView.setAlpha((float) 0.5);
+                }
+                if(event.getAction() == MotionEvent.ACTION_UP){
+                    holder.textView.setAlpha(1);
+                }
+                return false;
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return mDatas.size();
     }
+
 
     @Override
     public knowledge_base_fallpageAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

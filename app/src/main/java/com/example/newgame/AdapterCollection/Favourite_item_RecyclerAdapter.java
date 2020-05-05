@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newgame.R;
+import com.example.newgame.customViewCollection.custom_toast;
 
 import java.util.List;
 
@@ -43,11 +44,26 @@ public class Favourite_item_RecyclerAdapter extends RecyclerView.Adapter<Favouri
                 return false;
             }
         });
+
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.textView.setText("sb");
+                custom_toast ct = new custom_toast();
+                ct.showToast(mContext,"item deleted!");
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return mDatas.size();
+    }
+
+    public void removeItem(int position){
+        mDatas.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, getItemCount());
     }
 
     @Override

@@ -21,10 +21,10 @@
 
             <ImageView
                 android:id="@+id/portrait_me"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/alert_icon" />
 
             <TextView
@@ -78,13 +78,33 @@
     </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/text_favourite"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_margin = "18dp"
+        android:background="@drawable/linear_layout_background_shape"
+        android:orientation="vertical"
+        android:elevation="6dp">
+
+        <TableLayout
+            android:id="@+id/TableLayout_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:elevation="6dp"
+            android:orientation="vertical">
+
+            <TableRow>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_background"
+                    android:text="one" />
+            </TableRow>
 
 
+        </TableLayout>
+
+    </LinearLayout>
 </LinearLayout>
