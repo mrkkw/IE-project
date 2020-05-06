@@ -63,8 +63,6 @@
         android:layout_margin="9dp"
         android:background="@drawable/linear_layout_background_shape"
         />
-    
-
 
 
 </RelativeLayout>
