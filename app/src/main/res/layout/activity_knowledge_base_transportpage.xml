@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_gray"
     tools:context=".knowledge_base_transportpage">
 
     <LinearLayout
@@ -34,8 +35,12 @@
         android:id="@+id/knowledge_base_transportpage_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="9dp"
-        android:background="@drawable/linear_layout_background_shape"
+        android:elevation="6dp"
+        android:background="@color/light_gray"
         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
 
 </LinearLayout>

@@ -5,21 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_gray"
     tools:context=".ui.KnowledgeBase.KnowledgeBase">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/KB_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/linear_layout_background_shape"
-        android:backgroundTint="@color/light_gray"
-        android:orientation="vertical">
+        android:backgroundTint="@color/light_gray">
+
+        <TextView
+            android:id="@+id/kb_tip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:shadowColor="@color/light_gray"
+            android:text="KNOWLEDGE BASE | FALL"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/KB_Falls"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="9dp"
+            android:layout_below="@id/kb_tip1"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
             android:scaleType="fitXY"
@@ -27,10 +44,28 @@
             android:background="@drawable/linear_layout_background_shape"
         />
 
+        <TextView
+            android:id="@+id/kb_tip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/KB_Falls"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:shadowColor="@color/light_gray"
+            android:text="KNOWLEDGE BASE | TRANSPORT"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/KB_Transport"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_below="@id/kb_tip2"
             android:layout_margin="9dp"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
@@ -38,12 +73,30 @@
             android:elevation="6dp"
             android:background="@drawable/linear_layout_background_shape"
             />
+
+        <TextView
+            android:id="@+id/kb_tip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/KB_Transport"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:shadowColor="@color/light_gray"
+            android:text="KNOWLEDGE BASE | MACHINERY"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/KB_Machinery"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="9dp"
+            android:layout_below="@id/kb_tip3"
             android:clickable="true"
             android:src="@drawable/kb_click_background"
             android:scaleType="fitXY"
@@ -51,17 +104,10 @@
             android:background="@drawable/linear_layout_background_shape"
             />
 
-        <ImageView
-            android:id="@+id/KB_Heat_Induced_Stress_Injuries"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="9dp"
-            android:clickable="true"
-            android:src="@drawable/kb_click_background"
-            android:scaleType="fitXY"
-            android:elevation="6dp"
-            android:background="@drawable/linear_layout_background_shape"
-            />
-    </LinearLayout>
+            android:layout_height="100dp"
+            android:layout_below="@id/KB_Machinery"/>
+    </RelativeLayout>
 
 </ScrollView>

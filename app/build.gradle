@@ -49,6 +49,20 @@ dependencies {
     //SOURCE5
     implementation 'com.google.code.gson:gson:2.8.5'
 
+    //SOURCE6
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    //SOURCE7
+    implementation 'com.github.lguipeng:BubbleView:1.0.1'
+
+    //SOURCE8
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    //SOURCE9
+    implementation 'androidx.cardview:cardview'
+
+    //SOURCE10
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.2.1'
     implementation 'androidx.navigation:navigation-ui:2.2.1'

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_KB">
+    app:startDestination="@+id/navigation_game">
 
     <fragment
         android:id="@+id/navigation_KB"
@@ -24,5 +24,16 @@
         android:label="Personal information"
         tools:layout="@layout/me_fragment"/>
 
+    <fragment
+        android:id="@+id/navigation_game"
+        android:name="com.example.newgame.ui.Game.game_naviation"
+        android:label="Game"
+        tools:layout="@layout/game_naviation_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_statistic"
+        android:name="com.example.newgame.ui.statistic.statistic"
+        android:label="Statistic"
+        tools:layout="@layout/statistic_page_fragment"/>
 
 </navigation>

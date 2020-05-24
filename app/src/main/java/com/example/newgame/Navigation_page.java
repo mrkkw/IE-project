@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.newgame.customViewCollection.emergency_information;
+import com.example.newgame.ui.KnowledgeBase.KnowledgeBase;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.github.clans.fab.*;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,6 +26,9 @@ public class Navigation_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_page_again);
+
+        //back to kb
+        getIntentXX();
 
         //configuration
         configure();
@@ -38,6 +43,11 @@ public class Navigation_page extends AppCompatActivity {
         floatBtn_information();
     }
 
+    public void transfer() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController.navigate(R.id.navigation_KB);
+    }
+
     //configuration of fragment
     private void configure(){
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -47,7 +57,7 @@ public class Navigation_page extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_me, R.id.navigation_favourite, R.id.navigation_KB)
+                R.id.navigation_me, R.id.navigation_favourite, R.id.navigation_KB,R.id.navigation_game,R.id.navigation_statistic)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -85,11 +95,10 @@ public class Navigation_page extends AppCompatActivity {
         });
     }
 
-
     public void showDialog() {
 
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Welocme! New eagle!");
+        builder1.setMessage("Welcome! New eagle!");
         builder1.setCancelable(true);
 
         builder1.setTitle("Emergency Contact!");
@@ -107,7 +116,7 @@ public class Navigation_page extends AppCompatActivity {
         btn_contact_off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                call("0415702125");
+                call("000");
             }
         });
 
@@ -115,7 +124,7 @@ public class Navigation_page extends AppCompatActivity {
         btn_contact_pri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                call("0415702125");
+                call("");
             }
         });
 
@@ -148,4 +157,11 @@ public class Navigation_page extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void getIntentXX(){
+        int id = getIntent().getIntExtra("id", 0);
+        if (id == 1) {
+            Navigation_page navigation_page = this;
+            navigation_page.transfer();
+        }
+    }
 }

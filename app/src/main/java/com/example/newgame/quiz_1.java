@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -40,9 +43,6 @@ public class quiz_1 extends AppCompatActivity {
         setRecyclerView();
 
         backBtn();
-
-        stepBtn();
-
     }
 
     private void setRecyclerView(){
@@ -51,14 +51,27 @@ public class quiz_1 extends AppCompatActivity {
 
         initData();
 
-        recycleAdapter= new game_fall_listAdapter(quiz_1.this, mDatas);
+        recycleAdapter= new game_fall_listAdapter(quiz_1.this, mDatas,recyclerView);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        //set linear layout manager
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
 
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(mLinearLayoutManager);
 
-        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        mLinearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
 
+        //set touch scroll false
+        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
+
+        //set cache size for recycler view
+        recyclerView.setItemViewCacheSize(100);
+
+        //set adapter
         recyclerView.setAdapter(recycleAdapter);
 
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -78,37 +91,9 @@ public class quiz_1 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(quiz_1.this,gamepage.class);
-                startActivity(intent);
+                alertDialog();
             }
         });
-    }
-
-    private void stepBtn(){
-        Button btn = (Button)findViewById(R.id.step_button_quiz1);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(step == 0){
-                    MoveToPosition(recyclerView,1);
-                    step++;
-                }else if(step>=1&&step<14){
-                    MoveToPosition(recyclerView,++step);
-                }else if(step == 14){
-                    btn.setText("Finish");
-                }
-
-                if(btn.getText().toString().equals("Finish")){
-                    reportdialog();
-                }
-            }
-        });
-    }
-
-    public static void MoveToPosition(RecyclerView mRecyclerView, int n) {
-        mRecyclerView.scrollToPosition(n);
     }
 
     public void showDialog() {
@@ -116,7 +101,7 @@ public class quiz_1 extends AppCompatActivity {
         builder1.setMessage("Welcome! New eagle!");
         builder1.setCancelable(true);
 
-        builder1.setTitle("Quiz guideline!");
+        builder1.setTitle("Everyday tips!");
         builder1.setIcon(R.drawable.alert_icon);
 
         //set the view for the dialog
@@ -142,21 +127,26 @@ public class quiz_1 extends AppCompatActivity {
 
         //initialise the text view
         TextView textView = (TextView) v.findViewById(R.id.welcome_text);
-        textView.setText("The first 10 questions are general quizes and the last five questions are situational quizes\nThe order of answering question is 1-15 but if you want to answer the last firstly just scroll the quiz screen");
+        textView.setText("Do not touch the ground or push off with your hands on the see-saw!");
+
+        Drawable drawable = v.getResources().getDrawable(R.drawable.tips_item_pic);
+        ImageView imageView = (ImageView) v.findViewById(R.id.dialog_image);
+        imageView.setImageDrawable(drawable);
+
         //show the dialog
         alert11.show();
     }
 
-    public void reportdialog(){
+    public void alertDialog() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Good job! New eagle!");
+        builder1.setMessage("Welcome! New eagle!");
         builder1.setCancelable(true);
 
-        builder1.setTitle("Quiz report!");
+        builder1.setTitle("Quiz guideline!");
         builder1.setIcon(R.drawable.alert_icon);
 
         //set the view for the dialog
-        View v = LayoutInflater.from(this).inflate(R.layout.activity_custome_dialog,null);
+        View v = LayoutInflater.from(this).inflate(R.layout.activity_custome_dialog, null);
 
         //insert the quiz page into dialog
         builder1.setView(v);
@@ -167,20 +157,25 @@ public class quiz_1 extends AppCompatActivity {
         //initialise the start button
         Button btn_cancel = (Button) v.findViewById(R.id.cancel_button);
 
-        btn_cancel.setText("Finish!");
+        btn_cancel.setText("Confirm!");
         //quit the dialog
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 alert11.dismiss();
-                Intent intent  = new Intent(quiz_1.this,gamepage.class);
+                Intent intent = new Intent(quiz_1.this,gamepage.class);
                 startActivity(intent);
             }
         });
 
         //initialise the text view
+        Drawable drawable = v.getResources().getDrawable(R.drawable.goodbye_pic);
+        ImageView imageView = (ImageView) v.findViewById(R.id.dialog_image);
+        imageView.setImageDrawable(drawable);
+
+        //initialise the text view
         TextView textView = (TextView) v.findViewById(R.id.welcome_text);
-        textView.setText("Congratulation! You have finished all questions!");
+        textView.setText("Your progress maybe lost before finish all the quizes\n\nDo you still want to quit?");
         //show the dialog
         alert11.show();
     }

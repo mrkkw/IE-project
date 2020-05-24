@@ -7,32 +7,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".knowledge_base_heatinjurypage"></activity>
         <activity android:name=".knowledge_base_machinepage" />
         <activity android:name=".knowledge_base_transportpage" />
         <activity android:name=".knowledge_base_fallpage" />
-        <activity android:name=".quiz_5" />
-        <activity android:name=".quiz_4" />
         <activity android:name=".quiz_3" />
         <activity android:name=".quiz_2" />
         <activity android:name=".quiz_1" />
-        <activity android:name=".yesOrno_game" />
-        <activity android:name=".choice_game" />
         <activity android:name=".customViewCollection.Game_menu_dialog" />
         <activity android:name=".Introduction_page" />
-        <activity android:name=".customViewCollection.emergency_information" />
+        <activity android:name=".emergency_information" />
         <activity android:name=".customViewCollection.emergency_custom_dialog" />
         <activity android:name=".customViewCollection.custome_dialog" />
         <activity
             android:name=".Navigation_page"
             android:label="@string/title_activity_navigation_page" />
-        <activity android:name=".modepage" />
         <activity android:name=".quizpage" />
         <activity android:name=".gamepage" />
         <activity android:name=".MainActivity">

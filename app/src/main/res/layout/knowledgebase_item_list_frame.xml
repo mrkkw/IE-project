@@ -1,33 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:showDividers="middle"
-    android:divider="@drawable/divider_test"
-    android:background="@drawable/linear_layout_favourite_item"
-    android:elevation="6dp"
     >
-
-    <TextView
-        android:id="@+id/KB_item_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:text="xx"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:textColor="#000000"
-        android:textSize="16sp" />
-
-
-    <Button
-        android:id="@+id/KB_fav_button"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/love_fav"
-        android:layout_margin="18dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp"
         android:elevation="6dp"
-        />
+        android:clickable="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="4dp"
+        tools:targetApi="lollipop">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray">
+
+            <ImageView
+                android:id="@+id/KB_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/fav_tip_pic"/>
+
+            <TextView
+                android:id="@+id/KB_item_tip_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/KB_item_image"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="9dp"
+                android:shadowColor="@color/light_gray"
+                android:text="Knowledge"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/KB_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:layout_below="@+id/KB_item_image"
+                android:textColor="#808080"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/KB_item_explore_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/KB_item_text"
+                android:layout_alignLeft="@+id/KB_item_text"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:justificationMode="inter_word"
+                android:shadowColor="@color/light_gray"
+                android:text="EXPAND"
+                android:textColor="#f6aa3e"
+                android:textSize="20sp"
+                />
+
+            <com.like.LikeButton
+                app:icon_type="heart"
+                app:icon_size="10dp"
+                android:id="@+id/star_button"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/KB_item_text"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
 </LinearLayout>

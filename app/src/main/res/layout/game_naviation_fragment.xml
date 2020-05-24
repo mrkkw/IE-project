@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/game_nav_background"
+    tools:context=".ui.Game.game_naviation">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/middle_line"
+        android:layout_margin="9dp"
+        android:elevation="6dp"
+        android:clickable="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="4dp"
+        tools:targetApi="lollipop">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/game_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/welcome_pic"/>
+
+        <Button
+            android:id="@+id/game_item_explore_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:layout_below="@+id/game_item_image"
+            android:background="@drawable/button_background"
+            android:paddingLeft="25dp"
+            android:paddingTop="8dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="8dp"
+            android:alpha="0.9"
+            android:text="EXPLORE!"
+            android:textColor="#ffffff"
+            android:shadowColor="#f6aa3e"
+            android:shadowRadius="2.75"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/game_item_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="9dp"
+            android:layout_below="@+id/game_item_image"
+            android:background="@drawable/button_background"
+            android:paddingLeft="25dp"
+            android:paddingTop="8dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="8dp"
+            android:alpha="0.9"
+            android:text="Start!"
+            android:textColor="#ffffff"
+            android:shadowColor="#f6aa3e"
+            android:shadowRadius="2.75"
+            android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/middle_line"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_below="@id/middle_line"
+        android:visibility="invisible"
+        android:elevation="6dp"
+        android:clickable="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="4dp"
+        tools:targetApi="lollipop">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/gamer_image"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@drawable/gamer_pic"/>
+
+            <TextView
+                android:id="@+id/gamer_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:justificationMode="inter_word"
+                android:layout_below="@+id/gamer_image"
+                android:textColor="#808080"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/gamer_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:layout_below="@+id/gamer_item_text"
+                android:background="@drawable/button_background"
+                android:paddingLeft="25dp"
+                android:paddingTop="8dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="8dp"
+                android:alpha="0.9"
+                android:text="Start game!"
+                android:textColor="#ffffff"
+                android:shadowColor="#f6aa3e"
+                android:shadowRadius="2.75"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

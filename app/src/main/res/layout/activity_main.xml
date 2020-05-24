@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rurallife"
+    android:background="@drawable/home_screen_bg"
     android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/main_title"
-        layout="@layout/title_layout" />
 
     <LinearLayout
         android:id="@+id/logo_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_title"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <ImageView
@@ -30,13 +27,13 @@
             android:id="@+id/testWS"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dip"
+            android:layout_marginTop="100dip"
             android:bufferType="normal"
             android:gravity="center"
             android:shadowColor="#f6aa3e"
             android:shadowRadius="0.5"
             android:text="YEV"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="30sp" />
 
         <TextView
@@ -46,7 +43,7 @@
             android:text="YOUNG EAGLE VICTORIA"
             android:shadowColor="#f6aa3e"
             android:shadowRadius="0.5"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -110,12 +107,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo_layout"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/welcome_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/button_background"
@@ -129,6 +128,25 @@
             android:shadowColor="#f6aa3e"
             android:shadowRadius="2.75"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/button_background"
+            android:paddingLeft="25dp"
+            android:paddingTop="8dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="8dp"
+            android:alpha="0.9"
+            android:text="Sign up"
+            android:textColor="#ffffff"
+            android:shadowColor="#f6aa3e"
+            android:shadowRadius="2.75"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
 

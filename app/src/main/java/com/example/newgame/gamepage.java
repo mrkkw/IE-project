@@ -41,7 +41,6 @@ public class gamepage extends AppCompatActivity {
         mDatas.add( "Topic: FALL");
         mDatas.add( "Topic: TRANSPORT");
         mDatas.add( "Topic: MACHINE");
-        mDatas.add( "Topic: SUNSHINE");
     }
 
     private void setRecyclerView(){
@@ -68,7 +67,7 @@ public class gamepage extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(gamepage.this,MainActivity.class);
+                Intent intent1 = new Intent(gamepage.this,Navigation_page.class);
                 startActivity(intent1);
             }
         });

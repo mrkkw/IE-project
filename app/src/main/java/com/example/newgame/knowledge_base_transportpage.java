@@ -34,10 +34,9 @@ public class knowledge_base_transportpage extends AppCompatActivity {
 
     private void initData() {
         mDatas = new ArrayList<String>();
-        mDatas.add( "Topic: FALL");
-        mDatas.add( "Topic: TRANSPORT");
-        mDatas.add( "Topic: MACHINE");
-        mDatas.add( "Topic: SUNSHINE");
+        for ( int i=1; i < 17; i++) {
+            mDatas.add( "Quiz "+i);
+        }
     }
 
     private void setRecyclerView(){
@@ -55,7 +54,9 @@ public class knowledge_base_transportpage extends AppCompatActivity {
 
         recyclerView.setAdapter(recycleAdapter);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        //set cache size for recycler view
+        recyclerView.setItemViewCacheSize(100);
+
     }
 
     private void backbuttion(){
@@ -65,6 +66,7 @@ public class knowledge_base_transportpage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(knowledge_base_transportpage.this, Navigation_page.class);
+                intent.putExtra("id",1);
                 startActivity(intent);
             }
         });

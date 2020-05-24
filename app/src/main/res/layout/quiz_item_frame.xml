@@ -9,14 +9,24 @@
         android:id="@+id/quiz_choice_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="9dp"
+        android:elevation="6dp"
         android:background="@drawable/quiz_page_color_background"
         android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/quiz_theme_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="80dp"
+            android:layout_margin="9dp"
+            android:scaleType="fitXY"
+            android:elevation="6dp"
+            android:background="@drawable/fall_pic"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/linear_layout_background_shape"
             android:elevation="6dp"
             android:layout_marginLeft="9dp"
@@ -44,7 +54,7 @@
             android:layout_width="fill_parent"
             android:layout_height="1dip"
             android:layout_marginLeft="9dp"
-            android:layout_marginTop="18dip"
+            android:layout_marginTop="9dip"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="1dp"
             android:background="#000000" />
@@ -76,7 +86,27 @@
                 android:layout_height="wrap_content"
                 android:text="Middle" />
 
+            <RadioButton
+                android:id="@+id/radio_fall_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Middle" />
         </RadioGroup>
 
+        <Button
+            android:id="@+id/step_button_quiz1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="6dp"
+            android:layout_margin="9dp"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:paddingTop="1dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="1dp"
+            android:text="NEXT"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>

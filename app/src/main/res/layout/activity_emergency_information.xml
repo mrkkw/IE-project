@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customViewCollection.emergency_information">
+    android:background="@color/light_gray"
+    tools:context=".emergency_information">
 
     <LinearLayout
         android:id="@+id/button_layout"
@@ -33,9 +34,8 @@
         android:layout_below="@+id/button_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="9dp"
         android:elevation="6dp"
-        android:background="@drawable/linear_layout_background_shape"
+        android:background="@color/light_gray"
         />
 
 

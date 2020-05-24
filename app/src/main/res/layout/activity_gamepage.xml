@@ -25,8 +25,8 @@
             android:paddingTop="1dp"
             android:paddingRight="10dp"
             android:paddingBottom="1dp"
-            android:text="back"
             android:textColor="#ffffff"
+            android:text="back"
             android:textSize="15sp" />
 
         <LinearLayout

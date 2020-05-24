@@ -4,24 +4,37 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.newgame.customViewCollection.BubbleView;
 import com.example.newgame.customViewCollection.custom_text_view;
 import com.example.newgame.customViewCollection.custom_toast;
 
 public class Introduction_page extends AppCompatActivity {
 
     private custom_text_view custom_text;
-    String custom_text_text = "Introduction of YEV application\n\nHi new eagle!\nWe are glad to see you here and when you finish reading this introduction then you can test your knowledge and enjoy a pleasant trip in our game.\n\n" +
-            "For eagles at different age group, we will navigate you to the different section of game.\n\n However if you want to explore the topics firstly, click on the menu button and you will find the knowledge base there.\n\n" +
-            "Then at that position you can add the topics which your are interested in into my favourite topics.\n\nWhen you want to start the game, click on the game menu button and your trip will start!";
+    private custom_text_view custom_text1;
+    private custom_text_view custom_text2;
+    private custom_text_view custom_text3;
+
+    String intro_text1 = "Hi new eagle! This is the first time you sign in, let us introduce this quiz game for you!\nClick....";
+    String intro_text2 = "After this page, you will be navigated to the customisation page where you can create a character for yourself!\nClick....";
+    String intro_text3 = "After you have created a character, you will be navigated to the menu page where you can check the topics and enter the game!\nClick....";
+    String intro_text4 = "Your game trip is based on the quiz format so you can earn knowledge during the game, click start and enjoy your trip!\nClick....";
+
     int threshold = 0;
 
     @Override
@@ -30,26 +43,23 @@ public class Introduction_page extends AppCompatActivity {
         setContentView(R.layout.activity_introduction_page);
 
         introduction();
+
+        game_menu_btn();
     }
 
     private void introduction(){
+        TextView textView = (TextView)findViewById(R.id.BBBtextView1);
 
-        TextView textView = (TextView)findViewById(R.id.Introduction_text);
+        TextView textView1 = (TextView)findViewById(R.id.BBBtextView2);
+        textView1.setVisibility(View.INVISIBLE);
 
-        //click for speeding up
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(threshold < 100){
-                    threshold = 100;
-                    custom_text.setTime(threshold);
-                }else{
-                    custom_toast ct = new custom_toast();
-                    ct.showToast(getApplicationContext(),"maximum");
-                }
+        TextView textView2 = (TextView)findViewById(R.id.BBBtextView3);
+        textView2.setVisibility(View.INVISIBLE);
 
-            }
-        });
+        TextView textView3 = (TextView)findViewById(R.id.BBBtextView4);
+        textView3.setVisibility(View.INVISIBLE);
+
+        custom_text = new custom_text_view(textView,intro_text1,25);
 
         textView.addTextChangedListener(new TextWatcher() {
             @Override
@@ -59,32 +69,114 @@ public class Introduction_page extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                game_menu_btn(count);
+                if(s.length()<intro_text1.length()){
+                    textView.setClickable(false);
+                }else{
+                    textView.setClickable(true);
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+
             }
         });
 
-        custom_text = new custom_text_view(textView, custom_text_text, 100);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setClickable(false);
+                textView1.setVisibility(View.VISIBLE);
+                custom_text1 = new custom_text_view(textView1,intro_text2,25);
+            }
+        });
+
+        textView1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()<intro_text1.length()){
+                    textView1.setClickable(false);
+                }else{
+                    textView1.setClickable(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView1.setClickable(false);
+                textView2.setVisibility(View.VISIBLE);
+                custom_text2 = new custom_text_view(textView2,intro_text3,25);
+            }
+        });
+
+        textView2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()<intro_text1.length()){
+                    textView2.setClickable(false);
+                }else{
+                    textView2.setClickable(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView2.setClickable(false);
+                textView3.setVisibility(View.VISIBLE);
+                custom_text3 = new custom_text_view(textView3,intro_text4,25);
+                threshold = 1;
+            }
+        });
     }
 
-
-    private void game_menu_btn(int xx){
+    private void game_menu_btn(){
         Button button = (Button)findViewById(R.id.welcome_button);
+        button.setVisibility(View.INVISIBLE);
+        button.setClickable(false);
 
-        if(xx!=custom_text_text.length()){
-            button.setVisibility(View.INVISIBLE);
-        }else{
-            button.setVisibility(View.VISIBLE);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showDialog();
-                }
-            });
-        }
+        TextView textView3 = (TextView)findViewById(R.id.BBBtextView4);
+
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                button.setVisibility(View.VISIBLE);
+                button.setClickable(true);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Introduction_page.this,quizpage.class);
+                        startActivity(intent);
+                    }
+                });
+                textView3.setClickable(false);
+            }
+        });
     }
 
     //dialog
@@ -114,18 +206,6 @@ public class Introduction_page extends AppCompatActivity {
             public void onClick(View v) {
                 alert11.dismiss();
                 Intent  intent = new Intent(Introduction_page.this,quizpage.class);
-                startActivity(intent);
-            }
-        });
-
-        //initialise the menu button
-        Button btn_menu = (Button)v.findViewById(R.id.menu_button);
-
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert11.dismiss();
-                Intent  intent = new Intent(Introduction_page.this,Navigation_page.class);
                 startActivity(intent);
             }
         });

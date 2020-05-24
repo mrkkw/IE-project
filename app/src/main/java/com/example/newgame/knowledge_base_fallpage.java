@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.newgame.AdapterCollection.MyRecyclerAdapter;
 import com.example.newgame.AdapterCollection.knowledge_base_fallpageAdapter;
+import com.example.newgame.Database.DatabaseHelper;
 import com.example.newgame.R;
 import com.example.newgame.ui.Favourite.Favourite;
 
@@ -36,10 +38,9 @@ public class knowledge_base_fallpage extends AppCompatActivity {
 
     private void initData() {
         mDatas = new ArrayList<String>();
-        mDatas.add( "Topic: FALL");
-        mDatas.add( "Topic: TRANSPORT");
-        mDatas.add( "Topic: MACHINE");
-        mDatas.add( "Topic: SUNSHINE");
+        for ( int i=1; i < 15; i++) {
+            mDatas.add( "Quiz "+i);
+        }
     }
 
     private void setRecyclerView(){
@@ -57,7 +58,9 @@ public class knowledge_base_fallpage extends AppCompatActivity {
 
         recyclerView.setAdapter(recycleAdapter);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        //set cache size for recycler view
+        recyclerView.setItemViewCacheSize(100);
+
     }
 
     private void backbuttion(){
@@ -66,7 +69,8 @@ public class knowledge_base_fallpage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(knowledge_base_fallpage.this, Navigation_page.class);
+                Intent intent = new Intent(knowledge_base_fallpage.this,Navigation_page.class);
+                intent.putExtra("id",1);
                 startActivity(intent);
             }
         });

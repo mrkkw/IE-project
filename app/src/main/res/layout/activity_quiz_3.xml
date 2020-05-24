@@ -34,30 +34,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/game_machine_quiz_list"
-        android:layout_below="@+id/button_layout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
         android:layout_marginBottom="18dp"
         android:background="@drawable/linear_layout_background_shape"
         />
-
-    <Button
-        android:id="@+id/step_button_quiz3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        android:layout_margin="9dp"
-        android:background="@drawable/button_background"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="10dp"
-        android:paddingTop="1dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="1dp"
-        android:text="NEXT"
-        android:textColor="#ffffff"
-        android:textSize="15sp" />
 
 </LinearLayout>

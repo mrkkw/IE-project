@@ -46,24 +46,7 @@
             android:paddingTop="1dp"
             android:paddingRight="10dp"
             android:paddingBottom="1dp"
-            android:text="Start game!"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/menu_button"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/button_background"
-            android:paddingLeft="10dp"
-            android:paddingTop="1dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="1dp"
-            android:text="Start menu!"
+            android:text="Customise!"
             android:textColor="#ffffff"
             android:textSize="15sp" />
 

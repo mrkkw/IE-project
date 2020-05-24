@@ -15,7 +15,6 @@ import com.example.newgame.R;
 import com.example.newgame.quiz_1;
 import com.example.newgame.quiz_2;
 import com.example.newgame.quiz_3;
-import com.example.newgame.quiz_4;
 
 import java.util.List;
 
@@ -38,7 +37,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         Drawable Drawable1 = mContext.getResources().getDrawable(R.drawable.fall);
         Drawable Drawable2 = mContext.getResources().getDrawable(R.drawable.transport);
         Drawable Drawable3 = mContext.getResources().getDrawable(R.drawable.machine);
-        Drawable Drawable4 = mContext.getResources().getDrawable(R.drawable.sunshine);
 
         if(position==0){
             holder.imageView.setImageDrawable(Drawable1);
@@ -46,8 +44,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
             holder.imageView.setImageDrawable(Drawable2);
         }else if(position==2){
             holder.imageView.setImageDrawable(Drawable3);
-        }else if(position==3){
-            holder.imageView.setImageDrawable(Drawable4);
         }
 
         //set click listener for recycler view
@@ -63,9 +59,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                 }else if(position == 2){
                     Intent intent3 = new Intent(mContext, quiz_3.class);
                     mContext.startActivity(intent3);
-                }else if(position == 3){
-                    Intent intent4 = new Intent(mContext, quiz_4.class);
-                    mContext.startActivity(intent4);
                 }
             }
         });

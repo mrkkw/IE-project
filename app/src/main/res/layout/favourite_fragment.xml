@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/linear_layout_background_shape"
+    android:background="@color/light_gray"
     tools:context=".ui.Favourite.Favourite">
+
+    <TextView
+        android:id="@+id/Empty_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/light_gray"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:text="Empty, add some tips from knowledge base "
+        android:textColor="#808080"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favourite_item_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="9dp"
         android:elevation="6dp"
-        android:background="@drawable/linear_layout_background_shape"
+        android:background="@color/light_gray"
     />
-
 
 </RelativeLayout>

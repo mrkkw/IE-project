@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/quiz_page_color_background"
-    android:orientation="vertical"
-    android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".Introduction_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/quiz_page_color_background"
+        android:orientation="vertical"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <ImageView
             android:id="@+id/grouplogo"
-            android:layout_width="157dp"
-            android:layout_height="118dp"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
             android:layout_marginTop="18dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/teamlogo1" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -26,21 +33,126 @@
             android:elevation="6dp"
             android:layout_margin="9dp">
 
-            <TextView
-                 android:id="@+id/Introduction_text"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="9dp"
-                android:clickable="true"
-                android:bufferType="normal"
-                android:gravity="center"
-                android:justificationMode="inter_word"
-                android:shadowColor="#f6aa3e"
-                android:shadowRadius="0.5"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/intro_left1"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/intro_right1"/>
 
+            <com.github.library.bubbleview.BubbleTextView
+                android:id="@+id/BBBtextView1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_toRightOf="@+id/intro_left1"
+                android:elevation="6dp"
+                android:padding="10dp"
+                android:shadowColor="@color/light_gray"
+                android:text="Hello BubbleTextVew"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                app:angle="10dp"
+                app:arrowHeight="10dp"
+                app:arrowLocation="left"
+                app:arrowPosition="14dp"
+                app:arrowWidth="20dp"
+                app:bubbleColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/intro_right1"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:background="@drawable/intro_left1"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/intro_left1"
+                android:layout_marginTop="18dp"/>
+
+            <com.github.library.bubbleview.BubbleTextView
+                android:id="@+id/BBBtextView2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:layout_toLeftOf="@+id/intro_right1"
+                android:layout_below="@id/intro_left1"
+                android:layout_marginTop="18dp"
+                android:elevation="6dp"
+                android:padding="10dp"
+                android:shadowColor="@color/light_gray"
+                android:text="Hello BubbleTextVew"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                app:angle="10dp"
+                app:arrowHeight="10dp"
+                app:arrowLocation="right"
+                app:arrowPosition="14dp"
+                app:arrowWidth="20dp"
+                app:bubbleColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/intro_left2"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/intro_right1"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/intro_right2"/>
+
+            <com.github.library.bubbleview.BubbleTextView
+                android:id="@+id/BBBtextView3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/intro_left2"
+                android:layout_below="@+id/intro_right1"
+                android:elevation="6dp"
+                android:padding="10dp"
+                android:shadowColor="@color/light_gray"
+                android:text="Hello BubbleTextVew"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                app:angle="10dp"
+                app:arrowHeight="10dp"
+                app:arrowLocation="left"
+                app:arrowPosition="14dp"
+                app:arrowWidth="20dp"
+                app:bubbleColor="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/intro_right2"
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:background="@drawable/intro_left2"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/intro_left2"
+                android:layout_marginTop="18dp"/>
+
+            <com.github.library.bubbleview.BubbleTextView
+                android:id="@+id/BBBtextView4"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:layout_toLeftOf="@+id/intro_right2"
+                android:layout_below="@id/intro_left2"
+                android:layout_marginTop="18dp"
+                android:elevation="6dp"
+                android:padding="10dp"
+                android:shadowColor="@color/light_gray"
+                android:text="Hello BubbleTextVew"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:justificationMode="inter_word"
+                app:angle="10dp"
+                app:arrowHeight="10dp"
+                app:arrowLocation="right"
+                app:arrowPosition="14dp"
+                app:arrowWidth="20dp"
+                app:bubbleColor="@color/colorAccent" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/welcome_button"
@@ -61,4 +173,5 @@
             android:textSize="18sp" />
 
 
-</LinearLayout>
+        </LinearLayout>
+    </ScrollView>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -34,6 +35,8 @@ public class quizpage extends AppCompatActivity {
     String gender=null;
     String topic=null;
     String livingArea=null;
+    String selection = "NO";
+    String imageselection = "NO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class quizpage extends AppCompatActivity {
         checkBtn();
     }
 
+    //change your portrait
     private void changePortrait(){
         Button btn_portrait = (Button)findViewById(R.id.portrait_save_button);
 
@@ -78,6 +82,7 @@ public class quizpage extends AppCompatActivity {
 
     }
 
+    //choose a age
     private void ageSpinner(){
         //nice spinner1 initialisation
         NiceSpinner niceSpinner1 = (NiceSpinner) findViewById(R.id.nice_spinner1);
@@ -97,10 +102,11 @@ public class quizpage extends AppCompatActivity {
         });
     }
 
+    //choose a topic
     private void topicSpinner(){
         //nice spinner2 initialisation
         NiceSpinner niceSpinner2 = (NiceSpinner) findViewById(R.id.nice_spinner2);
-        List<String> dataset2 = new LinkedList<>(Arrays.asList("Transport", "Machine", "Fall down", "Heat injury"));
+        List<String> dataset2 = new LinkedList<>(Arrays.asList("Transport", "Machine", "Fall down"));
         niceSpinner2.attachDataSource(dataset2);
 
         //set selected toast for spinner2
@@ -114,10 +120,9 @@ public class quizpage extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
+    //choose a living area
     private void livingareaSpinner(){
         //nice spinner2 initialisation
         NiceSpinner niceSpinner3 = (NiceSpinner) findViewById(R.id.nice_spinner3);
@@ -137,6 +142,7 @@ public class quizpage extends AppCompatActivity {
         });
     }
 
+    //choose your gender
     private void genderRadioBtn(){
         //radio button set
         RadioGroup gender_group = (RadioGroup)findViewById(R.id.radio_group);
@@ -164,6 +170,7 @@ public class quizpage extends AppCompatActivity {
         });
     }
 
+
     private void checkBtn(){
         Button btn_save = (Button) findViewById(R.id.check_duplicate_button);
         custom_toast ct = new custom_toast();
@@ -171,12 +178,15 @@ public class quizpage extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText editText = (EditText) findViewById(R.id.nickname_edit);
+                editText.setError(null);
                 //check duplicate
                 checkUser checkuser  = new checkUser();
                 if(nickname().isEmpty()){
                     ct.showToast(getApplicationContext(),"Empty!");
                 }else{
                     checkuser.execute(nickname());
+                    selection = "YES";
                 }
             }
         });
@@ -184,6 +194,7 @@ public class quizpage extends AppCompatActivity {
 
     private void saveBtn(){
         Button btn_save = (Button) findViewById(R.id.quiz_save_button);
+        EditText editText = (EditText) findViewById(R.id.nickname_edit);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,11 +211,9 @@ public class quizpage extends AppCompatActivity {
                 //validation
                 if(nickname.isEmpty()){
                     ct.showToast(getApplicationContext(),"Nick name should not be empty(Default: mrkkw)");
-                    EditText editText = (EditText) findViewById(R.id.nickname_edit);
                     editText.setError("Nickname should not be empty!");
 
                 } else if (nickname.length()>10){
-                    EditText editText = (EditText) findViewById(R.id.nickname_edit);
                     editText.setError("Nickname should not beyond 10 words!");
                     editText.setTextColor(getResources().getColor(R.color.hongse));
 
@@ -227,9 +236,22 @@ public class quizpage extends AppCompatActivity {
                         }
                     });
 
-                } else if(nickname.equals("WrOnG!")){
+                }else if(imageselection.equals("NO")){
+                    ct.showToast(getApplicationContext(),"Choose a portrait for your character!");
+                }else if(selection.equals("NO")){
+                    editText.setError("Check duplication!");
+                    ct.showToast(getApplicationContext(),"Check duplication first!");
+                }else if(nickname.equals("WrOnG!")){
                     ct.showToast(getApplicationContext(),"Duplicate nickname");
-                } else{
+                }else if(gender==null){
+                    ct.showToast(getApplicationContext(),"Gender should not be empty!");
+                }else if(age==null){
+                    ct.showToast(getApplicationContext(),"Age should not be empty!");
+                }else if(topic==null){
+                    ct.showToast(getApplicationContext(),"Topic should not be empty!");
+                }else if(livingArea==null){
+                    ct.showToast(getApplicationContext(),"Living area should not be empty!");
+                }else{
                         //toast
                         message = "Your character is: "+ nickname + "(" + gender + ")" + ", age: " + age + ", topic: " + topic;
 
@@ -239,7 +261,7 @@ public class quizpage extends AppCompatActivity {
                         postUser.execute(nickname,gender,age,livingArea,topic);
 
                         //SharedPreferences
-                        SharedPreferences sp = getSharedPreferences("sp_name", Context.MODE_PRIVATE);
+                        SharedPreferences sp = getSharedPreferences("sp_name1", Context.MODE_PRIVATE);
 
                         SharedPreferences.Editor editor = sp.edit();
 
@@ -256,7 +278,7 @@ public class quizpage extends AppCompatActivity {
 
                         editor.commit();
 
-                        Intent intent = new Intent(quizpage.this,gamepage.class);
+                        Intent intent = new Intent(quizpage.this,Navigation_page.class);
                         startActivity(intent);
                     }
             }
@@ -284,7 +306,7 @@ public class quizpage extends AppCompatActivity {
             imageView.setImageURI(uri);
 
             //store the uri
-            SharedPreferences sp = getSharedPreferences("sp_name", Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("sp_name1", Context.MODE_PRIVATE);
 
             SharedPreferences.Editor editor = sp.edit();
 
@@ -292,9 +314,9 @@ public class quizpage extends AppCompatActivity {
 
             editor.commit();
             //set show
+            imageselection = "YES";
             ct.showToast(getApplicationContext(),"Portrait set succeed!");
         } else{
-
             //fail show
             ct.showToast(getApplicationContext(),"Access image failed!");
         }
@@ -328,6 +350,11 @@ public class quizpage extends AppCompatActivity {
                 alert11.dismiss();
             }
         });
+
+        //initialise the text view
+        Drawable drawable = v.getResources().getDrawable(R.drawable.welcome_pic_quizpage);
+        ImageView imageView = (ImageView) v.findViewById(R.id.dialog_image);
+        imageView.setImageDrawable(drawable);
 
         //initialise the text view
         TextView textView = (TextView) v.findViewById(R.id.welcome_text);
@@ -372,7 +399,7 @@ public class quizpage extends AppCompatActivity {
 
             if(subint==49){
 
-                editText.setError("Nickname should not duplicate!");
+                editText.setError("Nickname is duplicate! Make a new one");
                 editText.setText("WrOnG!");
                 editText.setTextColor(getResources().getColor(R.color.hongse));
 
